@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+def text_indentation(text):
+    """
+    Print text with two new line after . ? :
+
+    Raises:
+    TypeError: If text is not a string.
+
+    Examples:
+    >>> text_indentation("Lorem ipsum dolor sit amet. Quonam modo?
+    Utrum igitur tibi?")
+    Lorem ipsum dolor sit amet.
+    """
+
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
+
+    output = ""
+    characters_special = ".?:"
+
+    for char in text:
+        if char in characters_special:
+            if char in characters_special:
+                output += char + "\n\n"
+            else:
+                if char != " ":
+                    output += char
+                    if char == "\n":
+                        continue
+                if char not in characters_special:
+                    output += " "
+    print(output, end="")
